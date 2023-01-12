@@ -4,7 +4,6 @@
   "description": "",
   "homepage":"https://grom-85.github.io/goit-js-hw-09",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
   },
@@ -13,7 +12,7 @@
     "url": "git+https://github.com/GROM-85/goit-js-hw-09.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Roman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GROM-85/goit-js-hw-09/issues"
