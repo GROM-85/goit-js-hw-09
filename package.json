@@ -25,5 +25,6 @@
   },
   "devDependencies": {
     "parcel-reporter-clean-dist": "^1.0.4"
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
