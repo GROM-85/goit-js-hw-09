@@ -1,0 +1,2 @@
+const t=document.querySelector(".container"),e=document.querySelector("body"),r=document.querySelector("[data-start]"),a=document.querySelector("[data-stop]");let o;function d(){o=setInterval((()=>{e.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16)}`}),1e3),r.setAttribute("disabled","true"),a.removeAttribute("disabled")}t.addEventListener("click",(t=>{"start"===t.target.dataset.start?d():(clearInterval(o),a.setAttribute("disabled","true"),r.removeAttribute("disabled"))}));
+//# sourceMappingURL=01-color-switcher.fcccecca.js.map
