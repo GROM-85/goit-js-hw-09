@@ -2,7 +2,7 @@
   "name": "goit-js-hw-09",
   "version": "1.0.0",
   "description": "",
-  "homepage":"https://grom-85.github.io/goit-js-hw-09",
+  "homepage": "https://grom-85.github.io/goit-js-hw-09",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
@@ -17,12 +17,15 @@
   "bugs": {
     "url": "https://github.com/GROM-85/goit-js-hw-09/issues"
   },
-  
   "dependencies": {
+    "flatpickr": "^4.6.13",
+    "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
     "parcel": "^2.8.2"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
     "parcel-reporter-clean-dist": "^1.0.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
