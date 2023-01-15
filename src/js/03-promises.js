@@ -17,13 +17,6 @@ function createPromise(position, delay) {
   })  
 }
 
-function onFullfiled(result){
-  Notiflix.Notify.success(result); 
-}
-
-function onRejected(error){
-  Notiflix.Notify.failure(error);
-}
 
 function onSubmitHandler(event){
   event.preventDefault();
@@ -35,8 +28,8 @@ function onSubmitHandler(event){
   
   for(let pos = 1; pos <= quantity; pos++){
     createPromise(pos, timeDelay)
-    .then(onFullfiled)
-    .catch(onRejected);
+    .then((success) => Notiflix.Notify.success(success))
+    .catch((error) => Notiflix.Notify.failure(error));
     
     timeDelay += increment;
   }  
