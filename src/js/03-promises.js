@@ -28,8 +28,8 @@ function onSubmitHandler(event){
   
   for(let pos = 1; pos <= quantity; pos++){
     createPromise(pos, timeDelay)
-    .then((success) => Notiflix.Notify.success(success))
-    .catch((error) => Notiflix.Notify.failure(error));
+      .then((success) => Notiflix.Notify.success(success))
+      .catch((error) => Notiflix.Notify.failure(error));
     
     timeDelay += increment;
   }  

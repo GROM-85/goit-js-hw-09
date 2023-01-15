@@ -19,7 +19,7 @@ const options = {
         const chosenDate = new Date(selectedDates[0]);
 
         if(now < chosenDate){
-            btn.removeAttribute("disabled");
+            if(!timer.isActive) btn.removeAttribute("disabled");
         }
         else{
             Notiflix.Report.failure("Please enter the date in the future!","TRY ONCE MORE");
@@ -37,7 +37,7 @@ const timerUIObj = {
 
 const btn = document.querySelector("[data-start]");
 const input = document.querySelector("#datetime-picker")
-btn.setAttribute('disabled',"true");
+btn.setAttribute('disabled',true);
 flatpickr(input,options);
 
 function convertMs(ms) {
@@ -80,6 +80,7 @@ function updateUI(currValues){
 class Timer{
     constructor({onTick}={}){
         this.intervalId = null;
+        this.isActive = false;
         this.onTick = onTick;
     }
 
@@ -87,8 +88,9 @@ class Timer{
         let chosenTime = new Date(inputValue);
         let timeDelta = chosenTime.getTime() - Date.now();
 
-        if(timeDelta > 0){
-            btn.setAttribute("disabled",true);32
+        if(timeDelta > 0 && !this.isActive){
+            btn.setAttribute("disabled",true);
+            this.isActive = true;
             this.intervalId = setInterval(() => {
                 timeDelta = chosenTime.getTime() - Date.now();
                 if(timeDelta <= 1000){
@@ -100,12 +102,13 @@ class Timer{
         }
         else{
             Notiflix.Report.warning("Please update your time"," AND TRY ONCE MORE");
-            btn.setAttribute('disabled',"true");
+            btn.setAttribute('disabled',true);
         } 
     }
 
     stop(){
         clearInterval(this.intervalId);
+        this.isActive = false;
         Notiflix.Notify.success("Countdown has finished!",{
             cssAnimation:"form-left",
         }); 
